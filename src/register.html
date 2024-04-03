@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Register Manufacturer</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link rel="stylesheet" type="text/css" href="css/auth.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <div id="form_container" class="custom-card">
+        <div id="form_header_container">
+          <h2 id="form_header">Register</h2>
+        </div>
+
+        <div id="form_content_container">
+          <div id="form_content_inner_container">
+            <input type="text" id="full_name" placeholder="Full name" />
+            <input type="email" id="email" placeholder="Email" />
+            <input type="password" id="password" placeholder="New Password" />
+
+            <input type="text" id="mid" placeholder="Manufactured Id" />
+            <input type="text" id="location" placeholder="Location" />
+
+            <div id="button_container">
+              <button onclick="register()">Register</button>
+              <div id="anchortag">
+                <br />
+                <a href="login.html">Already have an account ? </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image inside the card -->
+        <div class="image-container">
+          <img src="img/signup.png" alt="Image" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+  <script src="js/auth.js"></script>
+</html>

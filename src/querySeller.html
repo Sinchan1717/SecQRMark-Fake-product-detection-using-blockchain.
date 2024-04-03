@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Fake Product Detection using Blockchain</title>
+
+    <!-- ==== STYLE.CSS ==== -->
+    <link rel="stylesheet" href="css/addProduct.css" />
+
+    <!-- ====  REMIXICON CDN ==== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- ==== ANIMATE ON SCROLL CSS CDN  ==== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/qr_code_box.css" />
+  </head>
+  <body>
+    <!-- ==== HEADER ==== -->
+    <header class="container header">
+      <!-- ==== NAVBAR ==== -->
+      <nav class="nav">
+        <div class="logo">
+          <h2>SecureMark</h2>
+          <h3></h3>
+        </div>
+
+        <div class="nav_menu" id="nav_menu">
+          <button class="close_btn" id="close_btn">
+            <i class="ri-close-fill"></i>
+          </button>
+
+          <ul class="nav_menu_list">
+            <li class="nav_menu_item">
+              <a href="index.html" class="nav_menu_link">Log out</a>
+            </li>
+            <li class="nav_menu_item">
+              <a href="#" class="nav_menu_link">About</a>
+            </li>
+            <li class="nav_menu_item">
+              <a href="#" class="nav_menu_link">How It Works</a>
+            </li>
+            <li class="nav_menu_item">
+              <a href="#" class="nav_menu_link">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="toggle_btn" id="toggle_btn">
+          <i class="ri-menu-line"></i>
+        </button>
+      </nav>
+    </header>
+	<section>
+        <div class="container">
+            <h2>Query Sellers</h2>
+
+              <div class="form-group">
+                <label for="email">Manufacturer Code</label>
+                <input type="email" class="form-control" id="manufacturerCode" placeholder="Enter manufacturer Code" name="manufacturerCode">
+              </div>
+              
+              <button type="submit" class="btn btn-warning btn-register" id="register">Get Sellers</button>
+          </div>
+    </section>
+
+
+	</section>
+    <section>
+        <div class="container">
+            <h2>Sellers</h2>
+            <p>Following are the sellers registered through Blockchain Network</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Brand</th>
+                        <th>Code</th>
+                        <th>Number</th>
+                        <th>Manager</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody id="logdata">
+
+                </tbody>
+            </table>
+            <center><p>Your address is <b id="add"></b></p></center>
+        </div>
+    </section>
+
+    <!-- <br></br>	
+	<div class="qr-code">
+		<div align="center">
+			<img align="center" hidden id="imgQR" src="" alt="qr-code" >
+		</div>
+		<br></br>
+		<div align="center">
+			<button align="center" hidden type="submit" class="btn btn-warning" id="download" onclick="saveImage()">Download QR Code</button>
+		</div>
+	</div>
+
+<br></br> -->
+
+   
+	
+
+    <!-- ==== ANIMATE ON SCROLL JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ==== GSAP CDN ==== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <!-- ==== SCRIPT.JS ==== -->
+    <script src="js/index.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/sellerDataApp.js"></script>
+  </body>
+</html>

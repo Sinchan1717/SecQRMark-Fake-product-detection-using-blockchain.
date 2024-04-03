@@ -1,0 +1,138 @@
+:root {
+  --primary-color: #335eea; /* Define primary color */
+  --btn-hover-color: #0056b3; /* Define button hover color */
+}
+
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#content_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#form_header_container {
+    background-color: white;
+}
+
+#form_header {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#form_content_container {
+    padding: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--btn-hover-color);
+}
+
+.custom-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.1); /* Add shadow effect on hover */
+}
+
+#anchortag {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#anchortag a {
+    color: var(--primary-color) ;
+}
+
+#anchortag a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    #content_container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .custom-card {
+        margin-top: 20px; /* Add margin to the top for spacing */
+    }
+}
+/* Your existing CSS */
+
+#content_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.custom-card {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  margin: 0 auto; /* Center the card horizontally */
+  padding: 20px;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items vertically */
+}
+
+/* Styles for the image container */
+.image-container img {
+  max-width: 248px; /* Decrease the maximum width of the image */
+  height: auto;
+  border-radius: 10px;
+  padding-left: 83px; /* Add border radius to match card */
+}
+
+
+
+/* Media Query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .custom-card {
+    max-width: 90%; /* Adjust maximum width for smaller screens */
+  }
+
+  .image-container {
+    margin-top: 10px; /* Reduce margin for smaller screens */
+    align-self: center; /* Center the image horizontally on smaller screens */
+  }
+}
+/*login css*/

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Fake Product Detection using Blockchain</title>
+
+  <!-- ==== STYLE.CSS ==== -->
+  <link rel="stylesheet" href="css/addProduct.css" />
+
+  <!-- ====  REMIXICON CDN ==== -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- ==== ANIMATE ON SCROLL CSS CDN  ==== -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/qr_code_box.css" />
+  <!-- <style>
+  #SellerCode {
+    display: none;
+  }
+  </style> -->
+</head>
+
+<body onload="getLocation()">
+  <!-- ==== HEADER ==== -->
+  <header class="container header">
+    <!-- ==== NAVBAR ==== -->
+    <nav class="nav">
+      <div class="logo">
+        <h2>SecureMark</h2>
+        <h3></h3>
+      </div>
+
+      <div class="nav_menu" id="nav_menu">
+        <button class="close_btn" id="close_btn">
+          <i class="ri-close-fill"></i>
+        </button>
+
+        <ul class="nav_menu_list">
+          <li class="nav_menu_item">
+            <a href="index.html" class="nav_menu_link">Log out</a>
+          </li>
+          <li class="nav_menu_item">
+            <a href="#" class="nav_menu_link">About</a>
+          </li>
+          <li class="nav_menu_item">
+            <a href="#" class="nav_menu_link">How It Works</a>
+          </li>
+          <li class="nav_menu_item">
+            <a href="#" class="nav_menu_link">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <button class="toggle_btn" id="toggle_btn">
+        <i class="ri-menu-line"></i>
+      </button>
+    </nav>
+  </header>
+  <section>
+    <div class="container">
+      <h2>Add Seller</h2>
+
+      <div>
+        <table width="100%">
+          <tr width="100%">
+            <td width="15%" align="center">
+              <label for="seller_id">Seller Name </label>
+            </td>
+            <td width="30%">
+              <input class="form-control" id="SellerName" name="SellerName" type="text" />
+            </td>
+            <td width="15" align="center">
+              <label for="name">Seller Brand</label>
+            </td>
+            <td width="30%">
+              <input class="form-control" id="SellerBrand" name="SellerBrand" type="text" />
+            </td>
+          </tr>
+
+          <tr width="100%">
+            <td width="15%" align="center">
+              <label for="username">Seller Phone Number</label>
+            </td>
+            <td width="30%">
+              <!-- <label for="SellerPhoneNumber">Phone Number:</label><br> -->
+              <input class="form-control" id="SellerPhoneNumber" name="SellerPhoneNumber" type="text" placeholder="+91" oninput="prependCountryCode()" required>
+              <!-- <small>Format: +91 followed by 10-digit phone number</small><br>            </td> -->
+            <td width="15" align="center">
+              <label for="name">Seller code</label>
+            </td>
+            <td width="30%">
+              <input class="form-control" id="SellerCode" name="SellerCode" type="text" />
+            </td>
+          </tr>
+
+          <tr width="100%">
+            <td width="15%" align="center">
+              <label for="username">Seller Manager</label>
+            </td>
+            <td width="30%">
+              <input class="form-control" id="SellerManager" name="SellerManager" type="text" />
+            </td>
+            <td width="15" align="center">
+              <label for="name">Seller Address</label>
+            </td>
+            <td width="30%">
+              <p id="demo"></p>
+              <input class="form-control" id="SellerAddress" name="SellerAddress" type="text" placeholder="Your Location" readonly>
+                </td>
+          </tr>
+
+          <tr width="100%">
+            <td width="15%" align="center">
+              <label for="username">Manufacturer ID</label>
+            </td>
+            <td width="30%">
+              <input class="form-control" id="ManufacturerId" name="ManufacturerId" type="text" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="clear">&nbsp;</div>
+
+      <button type="submit" class="btn btn-warning btn-register" id="register" onclick="addsellertodb()">
+        Add the Seller
+      </button>
+    </div>
+  </section>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script> -->
+      <!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+  <!-- ==== ANIMATE ON SCROLL JS CDN -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- ==== GSAP CDN ==== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <!-- ==== SCRIPT.JS ==== -->
+  <script src="js/index.js" defer></script>
+  <script src="js/addseller.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/sellerApp.js"></script>
+</body>
+<script> function prependCountryCode() {
+  var phoneNumberInput = document.getElementById("SellerPhoneNumber");
+  var countryCode = "+91";
+  var inputValue = phoneNumberInput.value;
+  
+  // If the input value doesn't start with the country code, prepend it
+  if (!inputValue.startsWith(countryCode)) {
+    phoneNumberInput.value = countryCode + inputValue;
+  }
+}</script>
+<script>
+  document.getElementById('SellerPhoneNumber').addEventListener('input', function() {
+    // Get the value entered in the seller phone number field
+    var phoneNumber = document.getElementById('SellerPhoneNumber').value;
+    
+    // Set the seller code field to the same value as the seller phone number
+    document.getElementById('SellerCode').value = phoneNumber;
+    // console.log("SellerCode")
+  });
+</script>
+<script>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
+      .then(response => response.json())
+      .then(data => {
+        var address = data.display_name;
+      
+        document.getElementById("SellerAddress").value = address; // Update the input field with the address
+      })
+      .catch(error => {
+        console.error('Error fetching address:', error);
+        document.getElementById("demo").innerHTML = "Latitude: " + latitude + 
+          "<br>Longitude: " + longitude + "<br>Unable to fetch address.";
+      });
+  }
+
+  function showError(error) {
+    console.error(error.message);
+    document.getElementById("demo").innerHTML = "Error: " + error.message;
+  }
+</script>
+
+</html>

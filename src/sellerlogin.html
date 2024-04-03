@@ -1,0 +1,92 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OTP Verification</title>
+        
+    </head>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2::before {
+            content: "\2714";
+            font-size: 24px;
+            color: #4caf50;
+            position: absolute;
+            left: -35px;
+            top: 0;
+        }
+
+        input[type="tel"],
+        input[type="text"],
+        button {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2196f3;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0b7dda;
+        }
+
+        #status {
+            margin-top: 10px;
+        }
+    </style>
+    <body>
+        
+        <div class="container">
+            <h2>OTP Verification</h2>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+            <button onclick="sendOTP()">Send OTP</button>
+            <input type="text" id="otp" placeholder="Enter OTP">
+            <button onclick="verifyOTP()">Verify OTP</button>
+            <p id="status"></p>
+            <div id="recaptcha-container"></div>
+        </div>
+
+        
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script> -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script src="js/sellerlogin.js"></script>
+
+    </html>
