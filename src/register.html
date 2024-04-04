@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/auth.css" />
   </head>
-  <body>
+  <body onload="getLocation()">
     <div id="content_container">
       <div id="form_container" class="custom-card">
         <div id="form_header_container">
@@ -18,7 +18,7 @@
         <div id="form_content_container">
           <div id="form_content_inner_container">
             <input type="text" id="full_name" placeholder="Full name" />
-            <input type="email" id="email" placeholder="Email" />
+            <input type="email" id="email" placeholder="Email" oninput="autoFillMid()" />
             <input type="password" id="password" placeholder="New Password" />
 
             <input type="text" id="mid" placeholder="Manufactured Id" />
@@ -47,4 +47,45 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
   <script src="js/auth.js"></script>
+  <script>
+    function autoFillMid() {
+      var email = document.getElementById('email').value;
+      var atIndex = email.indexOf('@');
+      var mid = atIndex !== -1 ? email.substring(0, atIndex) : email;
+      document.getElementById('mid').value = mid;
+    }
+  </script>
+<script>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
+      .then(response => response.json())
+      .then(data => {
+        var address = data.display_name;
+      
+        document.getElementById("location").value = address; // Update the input field with the address
+      })
+      .catch(error => {
+        console.error('Error fetching address:', error);
+        document.getElementById("demo").innerHTML = "Latitude: " + latitude + 
+          "<br>Longitude: " + longitude + "<br>Unable to fetch address.";
+      });
+  }
+
+  function showError(error) {
+    console.error(error.message);
+    document.getElementById("demo").innerHTML = "Error: " + error.message;
+  }
+</script>
+
 </html>
