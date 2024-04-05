@@ -1,209 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <title>Fake Product Detection using Blockchain</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Fake Product Detection using Blockchain</title>
 
-  <!-- ==== STYLE.CSS ==== -->
-  <link rel="stylesheet" href="css/manufacture.css" />
+    <!-- ==== STYLE.CSS ==== -->
+    <link rel="stylesheet" href="css/manufacture.css" />
 
-  <!-- ====  REMIXICON CDN ==== -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- ====  REMIXICON CDN ==== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
-  <!-- ==== ANIMATE ON SCROLL CSS CDN  ==== -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- ==== ANIMATE ON SCROLL CSS CDN  ==== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     
-
-  <style>.user-details-card {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 300px;
-    display: none;
-    z-index: 1000;
-  }
-  
-  .user-details {
-    text-align: center;
-  }
-  
-  .user-profile-pic img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #333;
-  }
-  </style>
-</head>
-<body>
-  <!-- ==== HEADER ==== -->
-  <header class="container header">
-    <!-- ==== NAVBAR ==== -->
-    <nav class="nav">
-      <div class="logo">
-        <h2>SecureMark</h2>
-        <h3></h3>
-      </div>
-
-      <div class="nav_menu" id="nav_menu">
-        <button class="close_btn" id="close_btn">
-          <i class="ri-close-fill"></i>
-        </button>
-
-        <ul class="nav_menu_list">
-          <li class="nav_menu_item">
-            <a href="index.html" class="nav_menu_link">Log out</a>
-          </li>
-          <li class="nav_menu_item">
-            <a href="#" class="nav_menu_link">About</a>
-          </li>
-          <li class="nav_menu_item">
-            <a href="#" class="nav_menu_link">How It Works</a>
-          </li>
-          <li class="nav_menu_item">
-            <a href="#" class="nav_menu_link" onclick="toggleCard()">User details</a>
-          </li>
-        </ul>
-      </div>
-
-      <button class="toggle_btn" id="toggle_btn">
-        <i class="ri-menu-line"></i>
-      </button>
-
-      <!-- User Details Card -->
-      <div class="user-details-card" id="userDetailsCard">
-        <div class="close-btn" onclick="toggleCard()">×</div>
-        <div class="user-details" id="userDetails">
-          <div class="user-profile-pic">
-            <img src="dummy_profile_pic.jpg" alt="Profile Picture" />
-          </div>
-          <!-- User details will be displayed here -->
+  </head>
+  <body>
+    <!-- ==== HEADER ==== -->
+    <header class="container header">
+      <!-- ==== NAVBAR ==== -->
+      <nav class="nav">
+        <div class="logo">
+          <h2>SecureMark</h2>
+          <h3></h3>
         </div>
-      </div>
-    </nav>
-  </header>
 
-  <section class="wrapper">
-    <div class="container">
-      <div class="grid-cols-2">
-        <div class="grid-item-1">
-          <h1 class="main-heading">
-            Welcome Back ! <span>Manufacture</span>
-          </h1>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="nav_menu" id="nav_menu">
+          <button class="close_btn" id="close_btn">
+            <i class="ri-close-fill"></i>
+          </button>
 
-  <section class="wrapper" id="cards_section">
-    <div class="container" data-aos="fade-up" data-aos-duration="1000">
-      <div class="grid-cols-3">
-        <!-- Manufacturer Card -->
-        <!-- Remaining cards here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- <footer class="footer">
-    <div class="container">
-      <div class="footer_content">
-        <div class="footer_logo">
-          <h2>Fake Product Identification</h2>
-        </div>
-        <div class="footer_links">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">Contact</a></li>
+          <ul class="nav_menu_list">
+            <li class="nav_menu_item">
+              <a href="index.html" class="nav_menu_link">Log out</a>
+            </li>
+            <li class="nav_menu_item">
+              <a href="#" class="nav_menu_link">About</a>
+            </li>
+            <li class="nav_menu_item">
+              <a href="#" class="nav_menu_link">How It Works</a>
+            </li>
+            <li class="nav_menu_item">
+              <a href="#" class="nav_menu_link" onclick="toggleCard()">User details</a>
+            </li>
           </ul>
         </div>
+
+        <button class="toggle_btn" id="toggle_btn">
+          <i class="ri-menu-line"></i>
+        </button>
+      </nav>
+    </header>
+    <section class="wrapper">
+      <div class="container">
+        <div class="grid-cols-2">
+          <div class="grid-item-1">
+            <h1 class="main-heading">
+              Welcome Back ! <span>Manufacture</span>
+            </h1>
+          </div>
+          
+        </div>
       </div>
-      <div class="footer_social">
-        <ul>
-          <li>
-            <a href="#"><i class="ri-facebook-fill"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="ri-twitter-fill"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="ri-instagram-fill"></i></a>
-          </li>
-        </ul>
+    </section>
+    <section class="wrapper" id="cards_section">
+      <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="grid-cols-3">
+          <!-- Manufacturer Card -->
+          <div class="grid-col-item">
+            <div class="custom-card">
+              <header class="w3-container w3-light-grey">
+                <h3>Add product</h3>
+              </header>
+              <div class="w3-container">
+                <p>Manufacturer can securely add products to the blockchain network, ensuring authenticity and traceability.</p>
+                <hr />
+                <button
+                  class="btn btn-wrapper center"
+                  onclick="window.location.href='addProduct.html';"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seller Card -->
+          <div class="grid-col-item">
+            <div class="custom-card">
+              <header class="w3-container w3-light-grey">
+                <h3>Add Seller</h3>
+              </header>
+              <div class="w3-container">
+                <p>
+                  Manufacturer securely adds products, ensuring authenticity, traceability, and transparency on blockchain
+                </p>
+                <hr />
+                <button
+                  class="btn btn-wrapper center"
+                  onclick="window.location.href='addSeller.html';"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-col-item">
+            <div class="custom-card">
+              <header class="w3-container w3-light-grey">
+                <h3>Sell Product To Seller</h3>
+              </header>
+              <div class="w3-container">
+                <p>
+                  Manufacturer securely sells products to authorized sellers on blockchain.
+                </p>
+                <hr />
+                <button
+                  class="btn btn-wrapper center"
+                  onclick="window.location.href='sellProductManufacturer.html';"
+                >
+                  Sell
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Card -->
+          <div class="grid-col-item">
+            <div class="custom-card">
+              <header class="w3-container w3-light-grey">
+                <h3>Query Seller</h3>
+              </header>
+              <div class="w3-container">
+                <p>
+                  
+              Sellers verify product authenticity and traceability through blockchain querying.
+                </p>
+                <hr />
+                <button
+                  class="btn btn-wrapper center"
+                  onclick="window.location.href='querySeller.html';"
+                >
+                  Check
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Seller Card -->
+        <div id="userDetailsCard" class="grid-col-item custom-card">
+          <header class="w3-container w3-light-grey">
+            <h3>User Details</h3>
+          </header>
+          <div class="w3-container">
+            <p>
+              <div id="userDetails">
+                <!-- User details will be displayed here -->
+              </div>
+            </p>
+            <hr />
+          </div>
+        </div>
       </div>
-      <div class="copy_right">
-        <p>&copy; 2024 Fake Product Identification. All Rights Reserved.</p>
+    </section>
+
+    <!-- <footer class="footer">
+      <div class="container">
+        <div class="footer_content">
+          <div class="footer_logo">
+            <h2>Fake Product Identification</h2>
+          </div>
+          <div class="footer_links">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">How It Works</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer_social">
+          <ul>
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="copy_right">
+          <p>&copy; 2024 Fake Product Identification. All Rights Reserved.</p>
+        </div>
       </div>
-    </div>
-  </footer> -->
+    </footer> -->
+    <script>
+        // Retrieve user details from local storage
+        var userDataString = localStorage.getItem("user_data");
+        var userData = JSON.parse(userDataString);
 
-  <script>
-    function toggleCard() {
-      var card = document.getElementById('userDetailsCard');
-      if (card.style.display === 'none' || !card.style.display) {
-        card.style.display = 'block';
-        loadUserDetails(); // Load user details when the card is displayed
-      } else {
-        card.style.display = 'none';
-      }
-    }
+        // Check if user data exists
+        if (userData) {
+          // Create HTML elements to display user details
+          var userDetailsDiv = document.getElementById("userDetails");
+          var userDetailsHTML =
+            "<p>Email: " + userData.email + "</p>";
+          userDetailsHTML +=
+            "<p>Full Name: " + userData.full_name + "</p>";
+          userDetailsHTML += "<p>MID: " + userData.mid + "</p>";
+          userDetailsHTML +=
+            "<p>Locations: " + userData.locations + "</p>";
+          userDetailsHTML +=
+            "<p>Last Login: " +
+            new Date(userData.last_login).toLocaleString() +
+            "</p>";
 
-    function loadUserDetails() {
-      // Retrieve user details from local storage
-      var userDataString = localStorage.getItem("user_data");
-      var userData = JSON.parse(userDataString);
-
-      // Check if user data exists
-      if (userData) {
-        // Create HTML elements to display user details
-        var userDetailsDiv = document.getElementById("userDetails");
-        var userDetailsHTML = "<h2>User Details</h2>";
-        userDetailsHTML += "<p><strong>Email:</strong> " + userData.email + "</p>";
-        userDetailsHTML += "<p><strong>Full Name:</strong> " + userData.full_name + "</p>";
-        userDetailsHTML += "<p><strong>MID:</strong> " + userData.mid + "</p>";
-        userDetailsHTML += "<p><strong>Locations:</strong> " + userData.locations + "</p>";
-        userDetailsHTML += "<p><strong>Last Login:</strong> " + new Date(userData.last_login).toLocaleString() + "</p>";
-
-        // Set innerHTML of userDetailsDiv to display user details
-        userDetailsDiv.innerHTML = userDetailsHTML;
-      } else {
-        // If user data is not available, display a message
-        document.getElementById("userDetails").textContent = "User details not found.";
-      }
-    }
-  </script>
-
-  <!-- ==== ANIMATE ON SCROLL JS CDN ==== -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- ==== GSAP CDN ==== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-  <!-- ==== SCRIPT.JS ==== -->
-  <script src="js/	index.js" defer></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/web3.min.js"></script>
-  <script src="js/truffle-contract.js"></script>
-<!-- 
-  tesd -->
-</body>
+          // Set innerHTML of userDetailsDiv to display user details
+          userDetailsDiv.innerHTML = userDetailsHTML;
+        } else {
+          // If user data is not available, display a message
+          document.getElementById("userDetails").textContent =
+            "User details not found.";
+        }
+      </script>
+      <script>
+        function toggleCard() {
+          var card = document.getElementById('userDetailsCard');
+          if (card.style.display === 'none') {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      </script>
+    <!-- ==== ANIMATE ON SCROLL JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ==== GSAP CDN ==== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <!-- ==== SCRIPT.JS ==== -->
+    <script src="js/	index.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+  </body>
 </html>
