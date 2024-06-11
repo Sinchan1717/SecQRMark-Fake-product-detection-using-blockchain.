@@ -61,10 +61,11 @@ App = {
 
                 var tr="<tr>";
                 if(result){
-                    tr+="<td>"+ "Genuine Product."+"</td>";
-                }else{
-                    tr+="<td>"+ "Fake Product."+"</td>";
+                    tr += "<td><h1><b>Genuine Product.</b></h1></td>";
+                } else {
+                    tr += "<td><h1><b>Fake Product.</b></h1></td>";
                 }
+                
                 tr+="</tr>";
                 t+=tr;
 
