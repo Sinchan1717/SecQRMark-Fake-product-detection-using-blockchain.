@@ -64,5 +64,4 @@ Please ensure your code adheres to our coding standards and include relevant tes
 
 ## License
 
-Specify the license under which your project is distributed. For example:
 This project is licensed under the [MIT License](LICENSE).
