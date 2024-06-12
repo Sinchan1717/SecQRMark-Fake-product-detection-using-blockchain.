@@ -34,7 +34,7 @@ To install and run SecQRMark locally, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your_username/SecQRMark.git
+   [git clone https://github.com/your_username/SecQRMark.git](https://github.com/Sinchan1717/SecQRMark-Fake-product-detection-using-blockchain..git)
 2. Install Dependencies
 
    ```sh
