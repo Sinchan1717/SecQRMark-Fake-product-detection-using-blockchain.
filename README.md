@@ -51,16 +51,16 @@ To use SecQRMark for product authentication:
 1. Scan the QR code printed on the product packaging using a QR code scanner or mobile device.
 2. Visit the SecQRMark website or application and enter the scanned QR code.
 3. Verify the product authenticity status displayed on the website or application.
-4. Contributing
-5. Contributions to SecQRMark are welcome! To contribute:
 
-## Fork the repository.
+## Contributing
+Contributions to SecQRMark are welcome! To contribute:
 
-1. Create a new branch for your feature or bug fix.
-2. Make your changes and commit them.
-3. Push your changes to your fork.
-4. Submit a pull request to the main repository.
-5. Please ensure your code adheres to our coding standards and include relevant tests and documentation.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
+Please ensure your code adheres to our coding standards and include relevant tests and documentation.
 
 ## License
 
